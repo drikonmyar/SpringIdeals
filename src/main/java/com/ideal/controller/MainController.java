@@ -13,4 +13,9 @@ public class MainController {
         return new ResponseEntity<>("Hi " + userName + " Good Day from " + organization + " You have " + countOfLaptops + " Laptops", HttpStatus.OK);
     }
 
+    @PostMapping("/post/{name}")
+    public ResponseEntity<String> postMathod(@PathVariable(name = "name") String userName, @RequestParam(required = false, name = "org") String organization, @RequestBody(required = false) Integer countOfLaptops){
+        return new ResponseEntity<>("POST METHOD: Hi " + userName + " Good Day from " + organization + " You have " + countOfLaptops + " Laptops", HttpStatus.OK);
+    }
+
 }
