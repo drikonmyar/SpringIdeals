@@ -1,4 +1,4 @@
 # SpringIdeals
-This Project clears basic concepts of Spring Boot
+This Project clears the basic concepts of Spring Boot
 <br>
 Status: WIP
