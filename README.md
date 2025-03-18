@@ -1,2 +1,2 @@
 # SpringIdeals
-Ideal Spring Boot Project
+This Project clears basic concepts of Spring Boot
