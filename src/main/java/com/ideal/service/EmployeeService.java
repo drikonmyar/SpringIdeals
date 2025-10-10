@@ -29,4 +29,11 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public Employee updateEmployee(Integer id, EmployeeDto employeeDto){
+        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with ID: " + id + " not found!!!"));
+        employee.setName(employeeDto.getName());
+        employee.setYoe(employeeDto.getYoe());
+        return employeeRepository.save(employee);
+    }
+
 }

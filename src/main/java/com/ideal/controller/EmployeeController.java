@@ -32,4 +32,9 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.getAllEmployees(), HttpStatus.OK);
     }
 
+    @PutMapping("/update")
+    public ResponseEntity<Employee> updateEmployee(@RequestParam Integer id, @RequestBody EmployeeDto employeeDto){
+        return new ResponseEntity<>(employeeService.updateEmployee(id, employeeDto), HttpStatus.OK);
+    }
+
 }
