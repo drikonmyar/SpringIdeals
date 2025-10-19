@@ -31,6 +31,10 @@ public class EmployeeService {
 
     public Employee updateEmployee(Integer id, EmployeeDto employeeDto){
         Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with ID: " + id + " not found!!!"));
+        // checks if no change in updated details
+        if(employee.getName().equals(employeeDto.getName()) && employee.getYoe().equals(employeeDto.getYoe())){
+            throw new RuntimeException("No change in employee with ID: " + id);
+        }
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
         return employeeRepository.save(employee);
