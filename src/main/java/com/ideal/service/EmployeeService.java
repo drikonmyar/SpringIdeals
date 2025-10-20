@@ -2,6 +2,8 @@ package com.ideal.service;
 
 import com.ideal.dto.EmployeeDto;
 import com.ideal.entity.Employee;
+import com.ideal.exception.NoChangeException;
+import com.ideal.exception.ResourceNotFoundException;
 import com.ideal.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,10 +32,11 @@ public class EmployeeService {
     }
 
     public Employee updateEmployee(Integer id, EmployeeDto employeeDto){
-        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee with ID: " + id + " not found!!!"));
-        // checks if no change in updated details
+        // check no employee found
+        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee with ID: " + id + " not found!!!"));
+        // check if no change in updated details
         if(employee.getName().equals(employeeDto.getName()) && employee.getYoe().equals(employeeDto.getYoe())){
-            throw new RuntimeException("No change in employee with ID: " + id);
+            throw new NoChangeException("No change in employee with ID: " + id);
         }
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
