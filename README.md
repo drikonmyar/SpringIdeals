@@ -6,9 +6,9 @@ Status: **WIP**
 ## Credentials:
 
 ### 1. Admin
-username: admin <br>
-password: admin123
+username: ***admin*** <br>
+password: ***admin123***
 
 ### 2. User
-username: user <br>
-password: user123
+username: ***user*** <br>
+password: ***user123***
