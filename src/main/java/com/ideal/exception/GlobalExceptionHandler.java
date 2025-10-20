@@ -33,7 +33,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, Object>> handleGeneticException(Exception ex){
+    public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex){
         Map<String, Object> exception  = new HashMap<>();
         exception.put("timestamp", LocalDateTime.now());
         exception.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
