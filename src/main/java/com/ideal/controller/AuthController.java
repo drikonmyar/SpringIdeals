@@ -4,6 +4,9 @@ import com.ideal.entity.UserEntity;
 import com.ideal.security.JwtUtils;
 import com.ideal.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -38,5 +41,11 @@ public class AuthController {
     @PostMapping("/register")
     public UserEntity register(@RequestBody UserEntity user){
         return userService.registerUser(user);
+    }
+
+    @PostMapping("/create-admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public UserEntity createAdmin(@RequestBody UserEntity user){
+        return userService.createAdmin(user);
     }
 }
