@@ -42,6 +42,16 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(exception, HttpStatus.FORBIDDEN);
     }
 
+    @ExceptionHandler(UserAlreadyExists.class)
+    public ResponseEntity<Map<String, Object>> handleUserAlreadyExistsException(UserAlreadyExists ex){
+        Map<String, Object> exception  = new HashMap<>();
+        exception.put("timestamp", LocalDateTime.now());
+        exception.put("status", HttpStatus.BAD_REQUEST.value());
+        exception.put("error", HttpStatus.BAD_REQUEST);
+        exception.put("message", ex.getMessage());
+        return new ResponseEntity<>(exception, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex){
         Map<String, Object> exception  = new HashMap<>();
