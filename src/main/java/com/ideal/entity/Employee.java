@@ -20,5 +20,7 @@ public class Employee {
     private String name;
     @Column(name = "years_of_exp")
     private Integer yoe;
+    @Column(name = "created_by")
+    private String createdBy;
 
 }

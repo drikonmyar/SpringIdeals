@@ -27,6 +27,7 @@ public class EmployeeService {
         Employee employee = new Employee();
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
+        employee.setCreatedBy(employeeDto.getCreatedBy());
         return employeeRepository.save(employee);
     }
 
