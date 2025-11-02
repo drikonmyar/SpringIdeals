@@ -22,5 +22,7 @@ public class Employee {
     private Integer yoe;
     @Column(name = "created_by")
     private String createdBy;
+    @Column(name = "updated_by")
+    private String updatedBy;
 
 }

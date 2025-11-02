@@ -28,6 +28,7 @@ public class EmployeeService {
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
         employee.setCreatedBy(employeeDto.getCreatedBy());
+        employee.setUpdatedBy(employeeDto.getUpdatedBy());
         return employeeRepository.save(employee);
     }
 
@@ -48,6 +49,7 @@ public class EmployeeService {
         }
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
+        employee.setUpdatedBy(employeeDto.getUpdatedBy());
         return employeeRepository.save(employee);
     }
 

@@ -27,6 +27,7 @@ public class EmployeeController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String createdBy = authentication.getName();
         employeeDto.setCreatedBy(createdBy);
+        employeeDto.setUpdatedBy(createdBy);
         return new ResponseEntity<>(employeeService.createEmployee(employeeDto), HttpStatus.CREATED);
     }
 
@@ -45,6 +46,9 @@ public class EmployeeController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Employee> updateEmployee(@RequestParam Integer id, @RequestBody EmployeeDto employeeDto){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String updatedBy = authentication.getName();
+        employeeDto.setUpdatedBy(updatedBy);
         return new ResponseEntity<>(employeeService.updateEmployee(id, employeeDto), HttpStatus.OK);
     }
 
