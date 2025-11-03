@@ -32,7 +32,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/get/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<Employee> getEmployee(@PathVariable Integer id){
         return new ResponseEntity<>(employeeService.getEmployee(id), HttpStatus.OK);
     }
