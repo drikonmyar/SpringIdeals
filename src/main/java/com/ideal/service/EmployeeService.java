@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
+import java.sql.Time;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,9 @@ public class EmployeeService {
         employee.setYoe(employeeDto.getYoe());
         employee.setCreatedBy(employeeDto.getCreatedBy());
         employee.setUpdatedBy(employeeDto.getUpdatedBy());
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        employee.setCreatedAt(currentDateTime);
+        employee.setUpdatedAt(currentDateTime);
         return employeeRepository.save(employee);
     }
 
@@ -50,6 +55,7 @@ public class EmployeeService {
         employee.setName(employeeDto.getName());
         employee.setYoe(employeeDto.getYoe());
         employee.setUpdatedBy(employeeDto.getUpdatedBy());
+        employee.setUpdatedAt(LocalDateTime.now());
         return employeeRepository.save(employee);
     }
 
