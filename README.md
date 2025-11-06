@@ -16,4 +16,5 @@ password: ***user123***
 ## Swagger:
 http://localhost:9090/swagger-ui.html <br>
 http://localhost:9090/swagger-ui/index.html <br>
-http://localhost:9090/v3/api-docs
+http://localhost:9090/v3/api-docs <br>
+http://localhost:9090/v3/api-docs.yaml
