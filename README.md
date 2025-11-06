@@ -12,3 +12,8 @@ password: ***admin123***
 ### 2. User
 username: ***user*** <br>
 password: ***user123***
+
+## Swagger:
+http://localhost:9090/swagger-ui.html <br>
+http://localhost:9090/swagger-ui/index.html <br>
+http://localhost:9090/v3/api-docs
