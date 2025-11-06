@@ -17,7 +17,7 @@ public class SwaggerConfig {
 
         return new OpenAPI()
                 .info(new Info()
-                        .title("My Spring Boot API")
+                        .title("SpringIdeals API")
                         .version("1.0.0")
                         .description("API documentation with JWT authentication"))
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
