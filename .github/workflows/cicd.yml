@@ -12,5 +12,5 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-      - name: Run the Maven -DskipTests
-        run: mvn --batch-mode --update-snapshots package
+      - name: Run the Maven (skip tests)
+        run: mvn --batch-mode --update-snapshots package -DskipTests
