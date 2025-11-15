@@ -21,5 +21,5 @@ http://localhost:9090/v3/api-docs.yaml
 
 ## SonarQube:
 Turn on Server: `./bin/macosx-universal-64/sonar.sh restart` <br>
-Run Command: `mvn clean verify -DskipTests sonar:sonar -Dsonar.token=<SONAR_TOKEN>`
-
+Run Command: `mvn clean verify -DskipTests sonar:sonar -Dsonar.token=<SONAR_TOKEN>` <br>
+Default Server: http://localhost:9000/
