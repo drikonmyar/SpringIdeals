@@ -18,3 +18,8 @@ http://localhost:9090/swagger-ui.html <br>
 http://localhost:9090/swagger-ui/index.html <br>
 http://localhost:9090/v3/api-docs <br>
 http://localhost:9090/v3/api-docs.yaml
+
+## SonarQube:
+Turn on Server: `./bin/macosx-universal-64/sonar.sh restart` <br>
+Run Command: `mvn clean verify -DskipTests sonar:sonar -Dsonar.token=<SONAR_TOKEN>`
+
