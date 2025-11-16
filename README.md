@@ -26,3 +26,13 @@ Run Command: `mvn clean verify -DskipTests sonar:sonar -Dsonar.token=<SONAR_TOKE
 Restart Server: `./bin/macosx-universal-64/sonar.sh restart` <br>
 Stop Server: `./bin/macosx-universal-64/sonar.sh stop` <br>
 Default Server: http://localhost:9000/
+
+## Docker:
+Docker Image: `docker build -t spring-ideals:latest . ` <br>
+Docker Run: `docker run -p 9090:9090 \ 
+-e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/SpringIdeals \
+-e SPRING_DATASOURCE_USERNAME=postgres \
+-e SPRING_DATASOURCE_PASSWORD=postgres \
+-e JWT_SECRET="my_super_secret_key_12345678901234567890" \
+--name spring-ideals \
+spring-ideals:latest `
