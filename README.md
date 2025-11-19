@@ -37,7 +37,7 @@ Docker Run: `docker run -p 9090:9090 \
 --name spring-ideals \
 spring-ideals:latest `
 
-## Access Docker Postgres DB
+## Access Docker Postgres DB:
 `docker exec -it my_postgres bash` <br>
 `psql -U postgres -d SpringIdeals` <br>
 `SELECT * FROM user_entity;` <br>
