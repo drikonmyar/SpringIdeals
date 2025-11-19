@@ -36,3 +36,10 @@ Docker Run: `docker run -p 9090:9090 \
 -e JWT_SECRET="my_super_secret_key_12345678901234567890" \
 --name spring-ideals \
 spring-ideals:latest `
+
+## Access Docker Postgres DB
+`docker exec -it my_postgres bash` <br>
+`psql -U postgres -d SpringIdeals` <br>
+`SELECT * FROM user_entity;` <br>
+`INSERT INTO user_entity (id, username, password, roles)
+VALUES (1, 'admin', '$2a$10$Sj6XMkQuwRnd39gAM0muKeEhwx.Rw0C1.DfqlIeJpxrNvMs/HV7DS', 'ROLE_ADMIN');`
