@@ -6,6 +6,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;
@@ -36,7 +37,7 @@ class ProductControllerTest {
         ResponseEntity<Map<String, Object>> response = productController.getAllProducts();
 
         // Assert
-        assertThat(response.getStatusCodeValue()).isEqualTo(200);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);  // updated
         assertThat(response.getBody()).isEqualTo(mockResponse);
     }
 }
